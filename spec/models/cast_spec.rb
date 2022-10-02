@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Cast, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { FactoryBot.create(:cast) }
+
+  it 'is valid' do
+    expect(subject).to be_valid
+  end
 end

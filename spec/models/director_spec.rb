@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Director, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { FactoryBot.create(:director) }
+
+  it 'is valid' do
+    expect(subject).to be_valid
+  end
 end
