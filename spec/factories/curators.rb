@@ -2,6 +2,9 @@ FactoryBot.define do
 	factory :curator do
 		name { "Sebastian Stan" }
 		age  { 41 }
-		podcasts { [ "Our Fake History", "Bumps in the Night" ] }
+		
+		after(:build) do |curator|
+			curator.podcasts { [create_list(:podcast, 4)] }
+		end
 	end
 end

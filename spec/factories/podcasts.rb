@@ -3,8 +3,11 @@ FactoryBot.define do
 		title { "No Sleep Podcast" }
 		description  { "Horror podcast" }
 		year { "2010" }
-		curator { ["Horace Neil"] }
-		cast { ["Tony Saber", "Gina Davis"] }
 		mood { ["Horror"] }
+
+		after(:build) do |podcast|
+			podcast.curator { create(:curator) }
+			podcast.cast_members { [create_list(:cast_member, 4)] }
+		end
 	end
 end

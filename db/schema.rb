@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_02_201854) do
+ActiveRecord::Schema.define(version: 2022_10_03_013011) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "username"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2022_10_02_201854) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "casts", force: :cascade do |t|
+  create_table "cast_members", force: :cascade do |t|
     t.string "name"
     t.integer "age"
     t.text "movies", default: "[]"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2022_10_02_201854) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "movies", default: "[]"
     t.text "podcasts", default: "[]"
+    t.integer "account_id"
+    t.index ["account_id"], name: "index_favorites_on_account_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -76,4 +78,5 @@ ActiveRecord::Schema.define(version: 2022_10_02_201854) do
     t.text "mood", default: "[]"
   end
 
+  add_foreign_key "favorites", "accounts"
 end
