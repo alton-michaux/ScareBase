@@ -3,4 +3,8 @@ class Account < ApplicationRecord
 
     has_many :movies, through: :favorites
     has_many :podcasts, through: :favorites
+
+    validates :username, presence: true
+    validates :email, presence: true
+    validates :password, presence: true
 end
