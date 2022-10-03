@@ -1,7 +1,9 @@
-class Movie < ApplicationRecord
-    serialize :cast, Array
-    serialize :mood, Array
+# frozen_string_literal: true
 
-    belongs_to :director
-    has_many :cast_members
+class Movie < ApplicationRecord
+  serialize :cast, Array
+  serialize :mood, Array
+
+  belongs_to :director
+  has_many :cast_members
 end

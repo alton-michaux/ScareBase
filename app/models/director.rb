@@ -1,6 +1,8 @@
-class Director < ApplicationRecord
-    serialize :movies, Array
-    serialize :podcasts, Array
+# frozen_string_literal: true
 
-    has_many :movies
+class Director < ApplicationRecord
+  serialize :movies, Array
+  serialize :podcasts, Array
+
+  has_many :movies
 end

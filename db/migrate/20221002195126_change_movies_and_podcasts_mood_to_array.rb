@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChangeMoviesAndPodcastsMoodToArray < ActiveRecord::Migration[6.1]
   def up
     change_column :movies, :mood, :text, array: true, default: [].to_yaml

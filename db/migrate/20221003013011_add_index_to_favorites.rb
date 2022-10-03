@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddIndexToFavorites < ActiveRecord::Migration[6.1]
   def up
     add_reference :favorites, :account, foreign_key: true
