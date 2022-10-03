@@ -1,0 +1,2 @@
+class CuratorsController < ApplicationController
+end
