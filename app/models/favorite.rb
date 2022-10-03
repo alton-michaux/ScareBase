@@ -6,4 +6,6 @@ class Favorite < ApplicationRecord
     
     has_many :movies
     has_many :podcasts
+
+    validates_associated :account
 end
