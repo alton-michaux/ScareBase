@@ -1,6 +1,6 @@
 class RemovePodcastsFromDirectors < ActiveRecord::Migration[6.1]
   def up
-    remove_column :directors, :podcasts, array: true, default: []
+    remove_column :directors, :podcasts, array: true, default: [].to_yaml
   end
 
   def down

@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 2022_10_03_013011) do
   create_table "cast_members", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.text "movies", default: "[]"
-    t.text "podcasts", default: "[]"
+    t.text "movies", default: "--- []\n"
+    t.text "podcasts", default: "--- []\n"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2022_10_03_013011) do
   create_table "curators", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.text "podcasts", default: "[]"
+    t.text "podcasts", default: "--- []\n"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2022_10_03_013011) do
   create_table "directors", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.text "movies", default: "[]"
+    t.text "movies", default: "--- []\n"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2022_10_03_013011) do
   create_table "favorites", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "movies", default: "[]"
-    t.text "podcasts", default: "[]"
+    t.text "movies", default: "--- []\n"
+    t.text "podcasts", default: "--- []\n"
     t.integer "account_id"
     t.index ["account_id"], name: "index_favorites_on_account_id"
   end
@@ -61,10 +61,10 @@ ActiveRecord::Schema.define(version: 2022_10_03_013011) do
     t.text "description"
     t.string "year"
     t.string "director"
-    t.text "cast", default: "[]"
+    t.text "cast", default: "--- []\n"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "mood", default: "[]"
+    t.text "mood", default: "--- []\n"
   end
 
   create_table "podcasts", force: :cascade do |t|
@@ -72,10 +72,10 @@ ActiveRecord::Schema.define(version: 2022_10_03_013011) do
     t.text "description"
     t.string "year"
     t.string "curator"
-    t.text "cast", default: "[]"
+    t.text "cast", default: "--- []\n"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "mood", default: "[]"
+    t.text "mood", default: "--- []\n"
   end
 
   add_foreign_key "favorites", "accounts"
