@@ -1,5 +1,7 @@
-class Curator < ApplicationRecord
-    serialize :podcasts, Array
+# frozen_string_literal: true
 
-    has_many :podcasts
+class Curator < ApplicationRecord
+  serialize :podcasts, Array
+
+  has_many :podcasts
 end

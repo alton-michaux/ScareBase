@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChangeFavoritesMoviesAndPodcastsToArray < ActiveRecord::Migration[6.1]
   def up
     change_column :favorites, :movies, :text, array: true, default: [].to_yaml

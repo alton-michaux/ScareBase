@@ -1,3 +1,14 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :accounts
+
+  as :account do
+    resources :favorite
+  end
+
+  resources :movies
+  resources :podcasts
+
+  root to: 'movies#index'
 end

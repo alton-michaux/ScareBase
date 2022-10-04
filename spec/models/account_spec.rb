@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Account, type: :model do
-  let!(:account) { Account.create(username: "Horror_Fan", email: "admin@gmail.com", password: "password") }
+  let!(:account) { Account.create(username: 'Horror_Fan', email: 'admin@gmail.com', password: 'password') }
 
   it 'is valid' do
     expect(account).to be_valid
