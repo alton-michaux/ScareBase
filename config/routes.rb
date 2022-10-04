@@ -7,5 +7,8 @@ Rails.application.routes.draw do
     resources :favorite
   end
 
+  resources :movies
+  resources :podcasts
+
   root to: 'movies#index'
 end
