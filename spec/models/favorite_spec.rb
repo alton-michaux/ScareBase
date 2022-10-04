@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe Favorite, type: :model do
-  let!(:account) { Account.create(username: 'Horror_Fan', email: 'admin@gmail.com', password: 'password') }
+  let!(:account) { Account.create(username: 'Horror_Fan', email: 'admin@gmail.com', password: 'Password1!') }
   let!(:favorite) { Favorite.create(account: account) }
 
   it 'is valid' do
