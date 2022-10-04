@@ -5,7 +5,7 @@ class Account < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
   has_one :favorite, dependent: :destroy # favorite model acts as link between account and movie/podcast models
 
   has_many :movies, through: :favorites
