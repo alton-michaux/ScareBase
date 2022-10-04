@@ -2,6 +2,6 @@
 
 Rails.application.routes.draw do
   devise_for :accounts
-  
-  root to: "movies#index"
+
+  root to: 'movies#index'
 end
