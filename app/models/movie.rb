@@ -3,7 +3,6 @@
 class Movie < ApplicationRecord
   serialize :cast, Array
   serialize :mood, Array
-  serialize :favorite_ids, Array
 
   belongs_to :favorite
 
