@@ -8,12 +8,12 @@ class AccountsController < ApplicationController
 
   def new
     @account = Account.new
-    @favorite = Favorite.build(account: @account)
+    # @favorite = Favorite.build(account: @account)
   end
 
   def create
     @account = Account.new(user_params)
-    @favorite.account_id = current_account.id
+    # @favorite.account_id = current_account.id
     if @account.save
       redirect_to root_path
       flash.notice = "An email with a link to confirm this account has been sent to #{@user.email}. If you do not receive this email within a few minutes of signing up, please check your Spam folder."
@@ -25,7 +25,7 @@ class AccountsController < ApplicationController
 
   def edit
     @account = Account.find(params[:id])
-    @favorite = Favorite.find_by(account_id: @account.id)
+    # @favorite = Favorite.find_by(account_id: @account.id)
   end
 
   def update
