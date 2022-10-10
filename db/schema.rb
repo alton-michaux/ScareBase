@@ -12,7 +12,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-# rubocop:disable Metrics/BlockLength
 ActiveRecord::Schema.define(version: 20_221_003_144_159) do
   create_table 'accounts', force: :cascade do |t|
     t.string 'username'
@@ -29,7 +28,6 @@ ActiveRecord::Schema.define(version: 20_221_003_144_159) do
     t.index ['email'], name: 'index_accounts_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_accounts_on_reset_password_token', unique: true
   end
-  # rubocop:enable Metrics/BlockLength'
 
   create_table 'cast_members', force: :cascade do |t|
     t.string 'name'
