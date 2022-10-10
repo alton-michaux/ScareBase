@@ -7,6 +7,7 @@ RSpec.describe Favorite, type: :model do
   let!(:favorite) { Favorite.create(account: account) }
 
   it 'is valid' do
+    byebug
     expect(favorite).to be_valid
   end
 
@@ -19,6 +20,9 @@ RSpec.describe Favorite, type: :model do
 
   it 'accepts an array as attributes' do
     expect(favorite.movies).to_not be_nil
+    expect(favorite.podcasts).to_not be_nil
+  
     expect(favorite.movies).to be_kind_of(ActiveRecord::Associations::CollectionProxy)
+    expect(favorite.podcasts).to be_kind_of(ActiveRecord::Associations::CollectionProxy)
   end
 end

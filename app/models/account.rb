@@ -12,7 +12,7 @@ class Account < ApplicationRecord
   has_many :podcasts, through: :favorites
 
   validates :username, presence: true
-  validates :email, presence: true, format: /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/, uniqueness: true
+  validates :email, presence: true, format: /.+[@].+[.].+/, uniqueness: true
   validates :password, presence: true
   validates :password, format: { with: /[a-z]+/, message: 'should have at least 1 lower case letter' }
   validates :password, format: { with: /[A-Z]+/, message: 'should have at least 1 upper case letter' }
