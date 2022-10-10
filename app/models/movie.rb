@@ -5,7 +5,6 @@ class Movie < ApplicationRecord
   serialize :mood, Array
   serialize :favorite_ids, Array
 
-  
   belongs_to :favorite
 
   has_one :director
